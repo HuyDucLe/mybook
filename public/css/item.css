@@ -660,18 +660,14 @@ footer .header {
 .khoithongtin .giaban .giamoi {
     color: red;
     font-size: 26px;
-    position: absolute;
-    top: 12px;
-    left: 149px;
+
 }
 
 /* don vi tien  */
 .khoithongtin .giaban .donvitien {
     color: red;
     font-size: 26px;
-    position: absolute;
-    top: 12px;
-    left: 250px;
+
     font-weight: bold;
 }
 

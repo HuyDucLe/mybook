@@ -49,11 +49,16 @@
                         </div>
                         <div class='col-md-7'>
                             <div class='gia'>
-                                <div class='giabia'>Giá bìa:<span class='giacu ml-2'>{{$item->price}}₫</span></div>
+                                @if(($item->price - $item->promote) != 0)
+                                <div class='giabia'>Giá bìa:<span class='giacu ml-2'>{{
+                                    number_format($item->price, 0 , ',' , '.')}} ₫</span></div>
+                                @endif
                                 <div class='giaban'>Giá bán tại MyBooks: <span
-                                        class='giamoi font-weight-bold'>{{$item->promote}}</span><span class='donvitien'>₫</span></div>
-                                <div class='tietkiem'>Tiết kiệm: <b>{{$item->price - $item->promote}} ₫</b> <span class='sale'>-{{100 - ceil($item->promote *100 / $item->price)}}%</span>
+                                        class='giamoi font-weight-bold'>{{number_format($item->promote, 0 , ',' , '.' )}}</span><span class='donvitien'>₫</span></div>
+                                @if(($item->price - $item->promote) != 0)
+                                <div class='tietkiem'>Tiết kiệm: <b>{{number_format($item->price - $item->promote, 0 , ',' , '.' )}} ₫</b> <span class='sale'>-{{100 - ceil($item->promote *100 / $item->price)}}%</span>
                                 </div>
+                                @endif
                             </div>
                             <div class='uudai my-3'>
                                 <h6 class='header font-weight-bold'>Khuyến mãi & Ưu đãi tại MyBook:</h6>
